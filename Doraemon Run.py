@@ -23,7 +23,7 @@ class Sprite:
 
 
 white = (255, 255, 255)
-font = pygame.font.SysFont(str('freesansbold.ttf'), 40)
+
 
 window_width = 1200
 window_height = 676
@@ -39,7 +39,7 @@ m = 1
 score = 0
 isjump = False
 res_folder = "res/"
-
+font = pygame.font.Font(str(res_folder + 'FreeSansBold.ttf'), 40)
 doraemon_img = [res_folder + "D1.png", res_folder + "D2.png",
                 res_folder + "D3.png", res_folder + "D4.png",
                 res_folder + "D5.png", res_folder + "D6.png",
@@ -196,14 +196,14 @@ def redraw_game_window():
 def game_over():
     global res_folder, game_exit, doraemon_died, walk_count, shown_time, v, y, m, score, isjump, fps, pipe, rock
     dgo = pygame.image.load(res_folder + "doraemon_gameover.png")
-    text_go = pygame.font.Font("freesansbold.ttf", 64).render("Game Over!", True, (255, 0, 0))
+    text_go = pygame.font.Font(res_folder + "FreeSansBold.ttf", 64).render("Game Over!", True, (255, 0, 0))
     text_go_rect = text_go.get_rect()
     text_go_rect.centerx = (window_width / 2)
-    bgot = pygame.font.Font("freesansbold.ttf", 48).render("Try Again", True, (0, 255, 0))
+    bgot = pygame.font.Font(res_folder + "FreeSansBold.ttf", 48).render("Try Again", True, (0, 255, 0))
     bgo = bgot.get_rect()
     bgo.centerx = window_width / 2
-    cre1 = pygame.font.Font("freesansbold.ttf", 32).render("Made by", True, (255, 0, 0))
-    cre2 = pygame.font.Font("freesansbold.ttf", 32).render("Shubham Shrivastav", True, (255, 0, 0))
+    cre1 = pygame.font.Font(res_folder + "FreeSansBold.ttf", 32).render("Made by", True, (255, 0, 0))
+    cre2 = pygame.font.Font(res_folder + "FreeSansBold.ttf", 32).render("Shubham Shrivastav", True, (255, 0, 0))
     creb1 = cre1.get_rect()
     creb2 = cre2.get_rect()
     creb2.bottomright = (window_width, window_height)
@@ -211,7 +211,7 @@ def game_over():
 
     bgo.y = 300
     rectbgo = pygame.rect.Rect(bgo.x - 25, bgo.y - 25, bgo.width + 50, bgo.height + 50)
-    scoretext = pygame.font.Font("freesansbold.ttf", 32).render("Score: " + str(score), True, (255, 0, 0))
+    scoretext = pygame.font.Font(res_folder + "FreeSansBold.ttf", 32).render("Score: " + str(score), True, (255, 0, 0))
     scoretextr = scoretext.get_rect()
     scoretextr.centerx = window_width / 2
     scoretextr.y = 450
