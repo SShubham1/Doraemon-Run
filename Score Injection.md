@@ -7,7 +7,7 @@ I decided to try and hack one of my old Pygame projects that I made during class
 
 First, I tried to use **Cheat Engine** but got `0` addresses when I tried to scan based on score changes.
 
-![Cheat Engine Scanning Failure](cheat_engine.png)
+![Cheat Engine Scanning Failure](assets/cheat_engine.png)
 
 **The Reason:** Unlike C/C++, Python doesn't use fixed memory pointers to change the value of a variable. Instead, when a variable's value changes, Python creates an entirely new object in memory and points the variable label to it. The garbage collector then cleans up the old address. This makes traditional memory scanners like Cheat Engine practically useless for interpreted Python games.
 
@@ -84,5 +84,7 @@ Detaching from program: /usr/bin/python3.13, process 243382
 ---
 
 ## 3. The Result
+
+![Score Injected](assets/score_changed.png)
 
 Looks like our score injection was completely successful! The game resumed perfectly without crashing, and the memory state was manipulated exactly as intended.
